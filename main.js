@@ -413,6 +413,20 @@ const products = [
       { name: 'Red', image: 'Airmax 97/IMG_2190.JPG', hex: '#FF0000' }
     ],
      sizes:['UK 4', 'UK 5','UK 6', 'UK 7', 'UK 8', 'UK 9', 'UK 10',]
+  },
+  {
+    id: 31,
+    name: 'Customisable Skully',
+    price: 499,
+    image: 'IMAGES/CLOTHING/IMG_2005.JPG',
+    colors: [
+      { name: 'Black', image: 'IMAGES/CLOTHING/IMG_2005.JPG', hex: '#000000' },
+      { name: 'White', image: 'IMAGES/CLOTHING/IMG_2006.JPG', hex: '#FFFFFF' },
+      { name: 'Navy', image: 'IMAGES/CLOTHING/IMG_2007.JPG', hex: '#001F3F' },
+      { name: 'Grey', image: 'IMAGES/CLOTHING/IMG_2008.JPG', hex: '#808080' }
+    ],
+    sizes: ['One Size'],
+    customizable: true
   }
 ];
 
@@ -1586,6 +1600,21 @@ function showProductDetail(productId) {
 
   updateSearchBarVisibility();
 
+  const isCustomizable = product.customizable === true;
+
+  const customizationSection = isCustomizable ? `
+    <div class="kit-customization">
+      <h3>Personalize Your Skully</h3>
+      <div class="customization-inputs">
+        <div class="custom-input-group">
+          <label for="playerName">Name (Optional)</label>
+          <input type="text" id="playerName" placeholder="e.g. JORDAN" maxlength="15" style="text-transform: uppercase;">
+        </div>
+        <p class="customization-note">Free personalization included</p>
+      </div>
+    </div>
+  ` : '';
+
   const mainContent = document.querySelector('main');
   mainContent.innerHTML = `
     <div class="product-detail-page">
@@ -1626,6 +1655,8 @@ function showProductDetail(productId) {
             </div>
           </div>
 
+          ${customizationSection}
+
           <button class="checkout-detail-btn" id="checkoutDetailBtn">CHECKOUT</button>
         </div>
       </div>
@@ -1634,6 +1665,7 @@ function showProductDetail(productId) {
 
   let selectedColor = product.colors[0].name;
   let selectedSize = null;
+  let customName = '';
 
   document.querySelectorAll('.color-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -1653,12 +1685,46 @@ function showProductDetail(productId) {
     });
   });
 
+  if (isCustomizable) {
+    const nameInput = document.getElementById('playerName');
+    if (nameInput) {
+      nameInput.addEventListener('input', (e) => {
+        customName = e.target.value.toUpperCase();
+      });
+    }
+  }
+
   document.getElementById('checkoutDetailBtn').addEventListener('click', () => {
     if (!selectedSize) {
       showNotification('Please select a size');
       return;
     }
-    addToCart(productId);
+
+    const cartItem = {
+      ...product,
+      color: selectedColor,
+      size: selectedSize,
+      quantity: 1
+    };
+
+    if (isCustomizable && customName) {
+      cartItem.customization = { name: customName };
+    }
+
+    const existingItem = cart.find(item =>
+      item.id === productId &&
+      item.color === selectedColor &&
+      item.size === selectedSize &&
+      JSON.stringify(item.customization) === JSON.stringify(cartItem.customization)
+    );
+
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cart.push(cartItem);
+    }
+
+    updateCart();
     showNotification(`${product.name} (${selectedColor}, ${selectedSize}) added to cart!`);
   });
 }

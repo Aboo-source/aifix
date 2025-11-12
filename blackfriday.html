@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Friday Sale - Sole Theory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/blackfriday.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="/">SOLE THEORY</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="/#home" class="nav-link">HOME</a></li>
+          <li><a href="/#sneakers" class="nav-link">SNEAKERS</a></li>
+          <li><a href="/#clothing" class="nav-link">CLOTHING</a></li>
+          <li><a href="/#exclusives" class="nav-link">EXCLUSIVES</a></li>
+          <li><a href="/#about" class="nav-link">ABOUT US</a></li>
+          <li><a href="/#support" class="nav-link">SUPPORT</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="cart-btn" id="cartBtn">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="blackfriday-hero">
+        <div class="hero-content">
+          <div class="sale-badge">40% OFF</div>
+          <h1 class="hero-title">BLACK FRIDAY SALE</h1>
+          <p class="hero-subtitle">Limited Time Only - Biggest Deals of the Year</p>
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <span class="countdown-value" id="days">00</span>
+              <span class="countdown-label">DAYS</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="hours">00</span>
+              <span class="countdown-label">HOURS</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="minutes">00</span>
+              <span class="countdown-label">MINUTES</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="seconds">00</span>
+              <span class="countdown-label">SECONDS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blackfriday-products">
+        <div class="section-header">
+          <h2>EXCLUSIVE BLACK FRIDAY DEALS</h2>
+          <p>Shop the hottest deals before they're gone</p>
+        </div>
+
+        <div class="products-grid" id="blackFridayGrid">
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #1</h3>
+              <p class="product-price">
+                <span class="original-price">R 2,500.00</span>
+                <span class="sale-price">R 1,500.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #2</h3>
+              <p class="product-price">
+                <span class="original-price">R 2,200.00</span>
+                <span class="sale-price">R 1,320.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #3</h3>
+              <p class="product-price">
+                <span class="original-price">R 1,800.00</span>
+                <span class="sale-price">R 1,080.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #4</h3>
+              <p class="product-price">
+                <span class="original-price">R 2,000.00</span>
+                <span class="sale-price">R 1,200.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #5</h3>
+              <p class="product-price">
+                <span class="original-price">R 1,600.00</span>
+                <span class="sale-price">R 960.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #6</h3>
+              <p class="product-price">
+                <span class="original-price">R 1,900.00</span>
+                <span class="sale-price">R 1,140.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #7</h3>
+              <p class="product-price">
+                <span class="original-price">R 2,100.00</span>
+                <span class="sale-price">R 1,260.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #8</h3>
+              <p class="product-price">
+                <span class="original-price">R 1,700.00</span>
+                <span class="sale-price">R 1,020.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #9</h3>
+              <p class="product-price">
+                <span class="original-price">R 2,300.00</span>
+                <span class="sale-price">R 1,380.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+
+          <div class="product-card placeholder-card">
+            <div class="product-image placeholder-image">
+              <div class="placeholder-text">Coming Soon</div>
+              <div class="discount-badge">40% OFF</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Black Friday Deal #10</h3>
+              <p class="product-price">
+                <span class="original-price">R 1,600.00</span>
+                <span class="sale-price">R 960.00</span>
+              </p>
+              <button class="add-to-cart" disabled>COMING SOON</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="promo-banner">
+        <div class="promo-content">
+          <h3>USE CODE: BLACKFRIDAY</h3>
+          <p>Get an additional 40% off at checkout</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>SOLE THEORY</h3>
+          <p>Where Street Meets Elite</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="/#home">Home</a>
+          <a href="/#sneakers">Sneakers</a>
+          <a href="/#clothing">Clothing</a>
+          <a href="/#about">About</a>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-link">Instagram</a>
+            <a href="https://www.tiktok.com/@soletheory.za" class="social-link">TikTok</a>
+            <a href="https://wa.me/27687777190" class="social-link">Whatsapp</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sole Theory. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>YOUR CART</h3>
+        <button class="cart-close" id="cartClose">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Your cart is empty</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>TOTAL:</span>
+          <span id="cartTotal">R 0.00</span>
+        </div>
+        <button class="checkout-btn" onclick="window.location.href='/checkout.html'">CHECKOUT</button>
+      </div>
+    </div>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <script type="module" src="/blackfriday.js"></script>
+  </body>
+</html>
